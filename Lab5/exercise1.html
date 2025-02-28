@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lab5 - Exercise 1 (Debug Version)</title>
+</head>
+<body>
+  <input type="text" id="textInput" placeholder="Type something here..." />
+  <label id="textLabel">Your text will appear here</label>
+  
+  <button id="redButton">Red</button>
+  <button id="blueButton">Blue</button>
+  <button id="greenButton">Green</button>
+  <button id="orangeButton">Orange</button>
+  <button id="purpleButton">Purple</button>
+
+  <script type="text/javascript">
+    const textInput = document.getElementById('textInput');
+    const textLabel = document.getElementById('textLabel');
+    const redButton = document.getElementById('redButton');
+    const blueButton = document.getElementById('blueButton');
+    const greenButton = document.getElementById('greenButton');
+    const orangeButton = document.getElementById('orangeButton');
+    const purpleButton = document.getElementById('purpleButton');
+
+    textInput.addEventListener('keydown', function(event) {
+      console.log("Key pressed: " + event.key);
+      if (event.key === "Enter") {
+        textLabel.textContent = textInput.value;
+        textInput.value = "";
+      }
+    });
+
+    function changeLabelColor(color) {
+      console.log("Changing label color to " + color);
+      textLabel.style.color = color;
+    }
+
+    redButton.addEventListener('click', function() {
+      console.log("Red button clicked");
+      changeLabelColor('red');
+    });
+    blueButton.addEventListener('click', function() {
+      console.log("Blue button clicked");
+      changeLabelColor('blue');
+    });
+    greenButton.addEventListener('click', function() {
+      console.log("Green button clicked");
+      changeLabelColor('green');
+    });
+    orangeButton.addEventListener('click', function() {
+      console.log("Orange button clicked");
+      changeLabelColor('orange');
+    });
+    purpleButton.addEventListener('click', function() {
+      console.log("Purple button clicked");
+      changeLabelColor('purple');
+    });
+  </script>
+</body>
+</html>
